@@ -1,5 +1,6 @@
 # Copia de revisión en GitHub Pages (rama develop): se publica con noindex y robots.txt cerrado.
-# Activa Pages en Settings → Pages → Source: "GitHub Actions".
+# Modo clásico: el workflow construye el sitio y sube dist/ a la rama gh-pages.
+# Configura Pages en Settings → Pages → Source: "Deploy from a branch", rama gh-pages, carpeta / (root).
 # BASE_PATH se fija a /<repositorio>/ (Pages de proyecto). Si Pages usa un dominio propio, pon BASE_PATH=/.
 name: Revisión en GitHub Pages
 on:
@@ -7,17 +8,15 @@ on:
     branches: [develop]
   workflow_dispatch:
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write # necesario para escribir la rama gh-pages
 concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { persist-credentials: false }
       - name: Ubicar proyecto
         id: dir
@@ -28,7 +27,6 @@ jobs:
           node-version-file: ${{ steps.dir.outputs.dir }}/.nvmrc
           cache: npm
           cache-dependency-path: ${{ steps.dir.outputs.dir }}/package-lock.json
-      - uses: actions/configure-pages@v5
       - run: npm ci
         working-directory: ${{ steps.dir.outputs.dir }}
       - run: npm run build
@@ -38,15 +36,14 @@ jobs:
           BASE_PATH: /${{ github.event.repository.name }}/
       - run: npm run verify
         working-directory: ${{ steps.dir.outputs.dir }}
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ${{ steps.dir.outputs.dir }}/dist
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publicar dist/ en la rama gh-pages
+        working-directory: ${{ steps.dir.outputs.dir }}/dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Revisión generada desde ${GITHUB_SHA::7} (${GITHUB_REF_NAME})"
+          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
