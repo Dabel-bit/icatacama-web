@@ -24,7 +24,7 @@ jobs:
       name: production
       url: https://icatacama.com
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { persist-credentials: false }
       - name: Ubicar proyecto
         id: dir
