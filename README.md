@@ -176,9 +176,10 @@ evento *viewer request*, y las cabeceras a reproducir están en `src/lib/securit
 
 ## Copia de revisión en GitHub Pages
 
-`.github/workflows/pages.yml` publica la rama `develop` en `https://<usuario>.github.io/<repositorio>/`
-con `SITE_ENV=preview` y `BASE_PATH=/<repositorio>/`. Activa Pages en Settings → Pages → Source: **GitHub Actions**.
-Si Pages usa un dominio propio, cambia `BASE_PATH` a `/` en el workflow.
+`.github/workflows/pages.yml` construye la rama `develop` con `SITE_ENV=preview` y `BASE_PATH=/<repositorio>/`
+y sube `dist/` a la rama `gh-pages`. Configura Pages una sola vez en Settings → Pages → Source:
+**Deploy from a branch**, rama `gh-pages`, carpeta `/ (root)`; el sitio queda en `https://<usuario>.github.io/<repositorio>/`.
+Si Pages usa un dominio propio, cambia `BASE_PATH` a `/` en el workflow. La rama `gh-pages` es generada: no la edites a mano.
 
 Los workflows detectan si el proyecto está en la raíz del repositorio o en `web/`; en el segundo caso, mueve la carpeta
 `.github/` a la raíz del repositorio y cambia `directory` a `/web` en `.github/dependabot.yml`.
