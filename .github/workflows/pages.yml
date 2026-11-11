@@ -1,0 +1,52 @@
+# Copia de revisión en GitHub Pages (rama develop): se publica con noindex y robots.txt cerrado.
+# Activa Pages en Settings → Pages → Source: "GitHub Actions".
+# BASE_PATH se fija a /<repositorio>/ (Pages de proyecto). Si Pages usa un dominio propio, pon BASE_PATH=/.
+name: Revisión en GitHub Pages
+on:
+  push:
+    branches: [develop]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Ubicar proyecto
+        id: dir
+        run: |
+          if [ -f package.json ]; then echo "dir=." >> "$GITHUB_OUTPUT"; elif [ -f web/package.json ]; then echo "dir=web" >> "$GITHUB_OUTPUT"; else echo "No se encontró package.json" && exit 1; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ${{ steps.dir.outputs.dir }}/.nvmrc
+          cache: npm
+          cache-dependency-path: ${{ steps.dir.outputs.dir }}/package-lock.json
+      - uses: actions/configure-pages@v5
+      - run: npm ci
+        working-directory: ${{ steps.dir.outputs.dir }}
+      - run: npm run build
+        working-directory: ${{ steps.dir.outputs.dir }}
+        env:
+          SITE_ENV: preview
+          BASE_PATH: /${{ github.event.repository.name }}/
+      - run: npm run verify
+        working-directory: ${{ steps.dir.outputs.dir }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.dir.outputs.dir }}/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

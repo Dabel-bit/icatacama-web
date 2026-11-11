@@ -1,0 +1,27 @@
+{
+  "name": "ic-atacama-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:preview": "SITE_ENV=preview vite build",
+    "preview": "vite preview",
+    "verify": "node scripts/verify-dist.js",
+    "audit": "npm audit --omit=dev --audit-level=high",
+    "deploy": "npm run build && npm run verify && bash deploy/deploy.sh"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "vite": "8.3.4"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

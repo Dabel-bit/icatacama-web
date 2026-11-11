@@ -1,0 +1,32 @@
+# Integración continua: build, verificación de seguridad del HTML y auditoría de dependencias.
+# Si web/ no es la raíz del repositorio, el paso "Ubicar proyecto" lo detecta en web/.
+name: CI
+on:
+  pull_request:
+  push:
+    branches-ignore: [main, develop]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { persist-credentials: false }
+      - name: Ubicar proyecto
+        id: dir
+        run: |
+          if [ -f package.json ]; then echo "dir=." >> "$GITHUB_OUTPUT"; elif [ -f web/package.json ]; then echo "dir=web" >> "$GITHUB_OUTPUT"; else echo "No se encontró package.json" && exit 1; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ${{ steps.dir.outputs.dir }}/.nvmrc
+          cache: npm
+          cache-dependency-path: ${{ steps.dir.outputs.dir }}/package-lock.json
+      - run: npm ci
+        working-directory: ${{ steps.dir.outputs.dir }}
+      - run: npm run audit
+        working-directory: ${{ steps.dir.outputs.dir }}
+      - run: npm run build
+        working-directory: ${{ steps.dir.outputs.dir }}
+      - run: npm run verify
+        working-directory: ${{ steps.dir.outputs.dir }}

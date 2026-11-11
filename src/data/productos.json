@@ -1,0 +1,208 @@
+{
+  "categorias": [
+    {
+      "nombre": "Tornos",
+      "slug": "tornos",
+      "descripcion": "Tornos paralelos convencionales y tornos CNC para taller de mantención, maestranza y producción en serie."
+    },
+    {
+      "nombre": "Fresadoras",
+      "slug": "fresadoras",
+      "descripcion": "Fresadoras universales y de torreta para mecanizado de piezas, matrices y trabajos de mantención."
+    },
+    {
+      "nombre": "Centros de mecanizado",
+      "slug": "centros-de-mecanizado",
+      "descripcion": "Centros de mecanizado vertical CNC para producción de piezas con alta precisión y repetibilidad."
+    },
+    {
+      "nombre": "Plegadoras y guillotinas",
+      "slug": "plegadoras-y-guillotinas",
+      "descripcion": "Plegadoras hidráulicas y guillotinas para corte y conformado de planchas de acero."
+    },
+    {
+      "nombre": "Corte láser y plasma",
+      "slug": "corte-laser-y-plasma",
+      "descripcion": "Máquinas de corte láser de fibra y corte por plasma CNC para planchas y perfiles metálicos."
+    },
+    {
+      "nombre": "Taladros",
+      "slug": "taladros",
+      "descripcion": "Taladros de columna y taladros radiales para perforación, avellanado y roscado en taller."
+    },
+    {
+      "nombre": "Sierras de cinta",
+      "slug": "sierras-de-cinta",
+      "descripcion": "Sierras de cinta manuales y semiautomáticas para corte de barras, perfiles y tubos metálicos."
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "slug": "torno-paralelo-410-x-1000-mm",
+      "nombre": "Torno paralelo 410 × 1.000 mm",
+      "categoria": "tornos",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 6490000,
+      "descripcion": "Torno paralelo convencional para taller de mantención y maestranza. [Completar con accesorios incluidos: plato de 3 mordazas, luneta fija y móvil, visualizador digital, refrigeración, etc.]",
+      "specs": [
+        ["Volteo sobre bancada", "410 mm"],
+        ["Distancia entre puntos", "1.000 mm"],
+        ["Paso de husillo", "52 mm"],
+        ["Potencia del motor", "5,5 kW"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 2,
+      "slug": "torno-cnc-bancada-inclinada",
+      "nombre": "Torno CNC de bancada inclinada",
+      "categoria": "tornos",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 28990000,
+      "descripcion": "Torno CNC de bancada inclinada para producción en serie con torreta automática. [Completar con control CNC, número de herramientas y accesorios.]",
+      "specs": [
+        ["Volteo máximo", "500 mm"],
+        ["Longitud de torneado", "400 mm"],
+        ["Torreta", "12 estaciones"],
+        ["Control", "[Control CNC]"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 3,
+      "slug": "fresadora-universal-torreta",
+      "nombre": "Fresadora universal de torreta",
+      "categoria": "fresadoras",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 9790000,
+      "descripcion": "Fresadora de torreta con cabezal orientable para mecanizado de piezas y trabajos de mantención. [Completar con avance automático, visualizador digital y accesorios.]",
+      "specs": [
+        ["Superficie de la mesa", "1.270 × 254 mm"],
+        ["Recorrido X / Y / Z", "760 / 400 / 400 mm"],
+        ["Cono del husillo", "R8 / ISO 40"],
+        ["Potencia del motor", "2,2 kW"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 4,
+      "slug": "centro-de-mecanizado-vertical-cnc",
+      "nombre": "Centro de mecanizado vertical CNC",
+      "categoria": "centros-de-mecanizado",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 52990000,
+      "descripcion": "Centro de mecanizado vertical con cambiador automático de herramientas para producción de piezas de precisión. [Completar con control CNC, velocidad de husillo y accesorios.]",
+      "specs": [
+        ["Recorrido X / Y / Z", "850 / 500 / 550 mm"],
+        ["Velocidad del husillo", "10.000 rpm"],
+        ["Cambiador de herramientas", "24 posiciones"],
+        ["Control", "[Control CNC]"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 5,
+      "slug": "plegadora-hidraulica-cnc-100-t-3200-mm",
+      "nombre": "Plegadora hidráulica CNC 100 t × 3.200 mm",
+      "categoria": "plegadoras-y-guillotinas",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 34990000,
+      "descripcion": "Plegadora hidráulica con control CNC para conformado de planchas. [Completar con número de ejes, tope trasero y herramientas incluidas.]",
+      "specs": [
+        ["Fuerza de plegado", "100 t"],
+        ["Longitud de plegado", "3.200 mm"],
+        ["Ejes controlados", "[Ejes]"],
+        ["Control", "[Control CNC]"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 6,
+      "slug": "guillotina-hidraulica-6-x-3200-mm",
+      "nombre": "Guillotina hidráulica 6 × 3.200 mm",
+      "categoria": "plegadoras-y-guillotinas",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 21490000,
+      "descripcion": "Guillotina hidráulica para corte recto de planchas de acero. [Completar con tope trasero, ángulo de corte y accesorios.]",
+      "specs": [
+        ["Espesor máximo de corte", "6 mm"],
+        ["Longitud de corte", "3.200 mm"],
+        ["Potencia del motor", "7,5 kW"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 7,
+      "slug": "cortadora-laser-fibra-3-kw",
+      "nombre": "Cortadora láser de fibra 3 kW",
+      "categoria": "corte-laser-y-plasma",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 58990000,
+      "descripcion": "Máquina de corte láser de fibra para planchas de acero, inoxidable y aluminio. [Completar con fuente láser, cabezal de corte y espesores por material.]",
+      "specs": [
+        ["Potencia del láser", "3 kW"],
+        ["Área de trabajo", "3.000 × 1.500 mm"],
+        ["Fuente láser", "[Marca de la fuente]"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 8,
+      "slug": "taladro-radial-40-mm",
+      "nombre": "Taladro radial 40 mm",
+      "categoria": "taladros",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 7290000,
+      "descripcion": "Taladro radial para perforación de piezas grandes en taller y maestranza. [Completar con alcance del brazo, velocidades y accesorios.]",
+      "specs": [
+        ["Capacidad de perforación", "40 mm"],
+        ["Alcance del brazo", "1.250 mm"],
+        ["Cono del husillo", "MT4"]
+      ],
+      "fotos": []
+    },
+    {
+      "id": 9,
+      "slug": "sierra-cinta-semiautomatica-280-mm",
+      "nombre": "Sierra de cinta semiautomática 280 mm",
+      "categoria": "sierras-de-cinta",
+      "marca": "[Marca]",
+      "modelo": "[Modelo]",
+      "origen": "[País de fabricación]",
+      "estado": "Nuevo",
+      "precio": 4390000,
+      "descripcion": "Sierra de cinta semiautomática para corte de barras, tubos y perfiles. [Completar con capacidades de corte en ángulo y sistema de refrigeración.]",
+      "specs": [
+        ["Capacidad de corte redondo", "280 mm"],
+        ["Corte en ángulo", "0° a 60°"],
+        ["Potencia del motor", "1,5 kW"]
+      ],
+      "fotos": []
+    }
+  ]
+}

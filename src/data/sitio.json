@@ -1,0 +1,69 @@
+{
+  "url": "https://icatacama.com",
+  "nombre": "IC Atacama",
+  "descripcion": "Importación y venta de maquinaria metalmecánica en Chile: tornos, fresadoras, centros de mecanizado CNC, plegadoras, guillotinas y más. Bodega en Cerrillos, Santiago, con despacho a todo Chile continental.",
+  "contacto": {
+    "email": "ventas@icatacama.com",
+    "telefono": "[+56 9 XXXX XXXX]",
+    "whatsapp": "",
+    "horario": "Lunes a viernes, 9:00 a 18:00",
+    "horarioSchema": [
+      { "dias": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "abre": "09:00", "cierra": "18:00" }
+    ],
+    "direccion": {
+      "calle": "[Calle y número]",
+      "comuna": "Cerrillos",
+      "ciudad": "Santiago",
+      "region": "Región Metropolitana",
+      "pais": "CL",
+      "codigoPostal": ""
+    },
+    "mapa": "",
+    "geo": null
+  },
+  "redes": [],
+  "ventajas": [
+    {
+      "icono": "import",
+      "titulo": "Importación directa",
+      "texto": "Traemos los equipos directamente desde fábrica, con respaldo técnico y precios competitivos."
+    },
+    {
+      "icono": "truck",
+      "titulo": "Despacho a todo Chile continental",
+      "texto": "Coordinamos el transporte desde nuestra bodega en Cerrillos hasta tu taller, planta o faena."
+    },
+    {
+      "icono": "tools",
+      "titulo": "Asesoría técnica",
+      "texto": "Te ayudamos a elegir la máquina adecuada para tu proceso, material y volumen de producción."
+    },
+    {
+      "icono": "doc",
+      "titulo": "Venta con factura",
+      "texto": "Atendemos a empresas y particulares. Aceptamos orden de compra y transferencia bancaria."
+    }
+  ],
+  "faq": [
+    {
+      "pregunta": "¿Hacen despacho a regiones?",
+      "respuesta": "Sí. Vendemos y coordinamos el despacho a todo Chile continental. El costo y el plazo dependen del equipo y del destino, y te los informamos junto con la cotización."
+    },
+    {
+      "pregunta": "¿Dónde están ubicados?",
+      "respuesta": "Nuestra bodega está en Cerrillos, Santiago, Región Metropolitana. Puedes coordinar una visita para ver los equipos o retirarlos directamente."
+    },
+    {
+      "pregunta": "¿Los equipos son nuevos?",
+      "respuesta": "Sí. Comercializamos maquinaria metalmecánica nueva, importada directamente. Cada ficha indica marca, modelo y especificaciones técnicas."
+    },
+    {
+      "pregunta": "¿Qué formas de pago aceptan?",
+      "respuesta": "Transferencia o depósito bancario, orden de compra para empresas y otras alternativas según el equipo. Todas las ventas se emiten con factura o boleta."
+    },
+    {
+      "pregunta": "¿Los equipos tienen garantía?",
+      "respuesta": "[Indicar el plazo y las condiciones de garantía, y la disponibilidad de repuestos y servicio técnico.]"
+    }
+  ]
+}

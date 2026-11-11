@@ -1,0 +1,12 @@
+# Actualizaciones de seguridad y de versiones de dependencias (npm) y de las acciones de los workflows.
+# Si web/ no es la raíz del repositorio, cambia "directory" a "/web".
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly }
+    groups:
+      dependencias: { patterns: ['*'] }
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }
