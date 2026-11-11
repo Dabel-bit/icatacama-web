@@ -29,6 +29,8 @@ jobs:
           cache: npm
           cache-dependency-path: ${{ steps.dir.outputs.dir }}/package-lock.json
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true # activa Pages (origen GitHub Actions) si aún no lo está
       - run: npm ci
         working-directory: ${{ steps.dir.outputs.dir }}
       - run: npm run build
