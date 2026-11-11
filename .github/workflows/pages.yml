@@ -28,7 +28,7 @@ jobs:
           node-version-file: ${{ steps.dir.outputs.dir }}/.nvmrc
           cache: npm
           cache-dependency-path: ${{ steps.dir.outputs.dir }}/package-lock.json
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - run: npm ci
         working-directory: ${{ steps.dir.outputs.dir }}
       - run: npm run build
