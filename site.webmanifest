@@ -1,0 +1,17 @@
+{
+  "name": "IC Atacama",
+  "short_name": "IC Atacama",
+  "description": "Importación y venta de maquinaria metalmecánica en Chile: tornos, fresadoras, centros de mecanizado CNC, plegadoras, guillotinas y más. Bodega en Cerrillos, Santiago, con despacho a todo Chile continental.",
+  "start_url": "/icatacama-web/",
+  "scope": "/icatacama-web/",
+  "display": "browser",
+  "background_color": "#F4F4F2",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/icatacama-web/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

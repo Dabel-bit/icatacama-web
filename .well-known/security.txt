@@ -1,0 +1,4 @@
+Contact: mailto:ventas@icatacama.com
+Expires: 2027-11-11T15:42:10Z
+Preferred-Languages: es, en
+Canonical: https://icatacama.com/.well-known/security.txt
