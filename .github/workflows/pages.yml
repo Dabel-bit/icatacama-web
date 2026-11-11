@@ -38,7 +38,7 @@ jobs:
           BASE_PATH: /${{ github.event.repository.name }}/
       - run: npm run verify
         working-directory: ${{ steps.dir.outputs.dir }}
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ steps.dir.outputs.dir }}/dist
   deploy:
