@@ -17,6 +17,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    # Se omite (sin fallar) mientras no estén configuradas las variables de AWS en el repositorio
+    if: ${{ vars.S3_BUCKET != '' && vars.CLOUDFRONT_DISTRIBUTION_ID != '' }}
     runs-on: ubuntu-latest
     environment:
       name: production
